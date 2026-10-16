@@ -1,0 +1,8 @@
+{
+  "name": "Memento Mori",
+  "description": "A profound life countdown and intentional living dashboard. Transform finite time into daily clarity with live mortality countdowns, 4,000 weeks Memento Mori grid, loved ones relationship time, and daily reflections.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,379 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-serif: "Fraunces", Georgia, serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-display: "Cinzel", serif;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+}
+
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(160, 160, 160, 0.18);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(160, 160, 160, 0.35);
+}
+
+/* =========================================================
+   APP ATMOSPHERE PALETTES
+   ========================================================= */
+
+/* 1. EMBER PALETTE: Darker red text on pure black background */
+[data-theme="ember"] {
+  background-color: #000000 !important;
+  color: #b91c1c !important;
+}
+
+[data-theme="ember"] .bg-neutral-950,
+[data-theme="ember"] .bg-neutral-900\/90,
+[data-theme="ember"] .bg-neutral-900\/80,
+[data-theme="ember"] .bg-neutral-900\/70,
+[data-theme="ember"] .bg-neutral-900\/60,
+[data-theme="ember"] .bg-neutral-900\/50,
+[data-theme="ember"] .bg-neutral-900\/40,
+[data-theme="ember"] .bg-neutral-900\/30,
+[data-theme="ember"] .bg-neutral-900 {
+  background-color: #040000 !important;
+}
+
+[data-theme="ember"] .bg-neutral-950\/70,
+[data-theme="ember"] .bg-neutral-950\/60,
+[data-theme="ember"] .bg-neutral-950\/40 {
+  background-color: #020000 !important;
+}
+
+/* Ember text rules: Headings crimson, body darker red, muted deep burgundy */
+[data-theme="ember"] .text-neutral-100,
+[data-theme="ember"] .text-neutral-200,
+[data-theme="ember"] .text-white {
+  color: #dc2626 !important; /* Crimson heading */
+}
+
+[data-theme="ember"] .text-neutral-300,
+[data-theme="ember"] .text-neutral-400 {
+  color: #b91c1c !important; /* Darker red text */
+}
+
+[data-theme="ember"] .text-neutral-500,
+[data-theme="ember"] .text-neutral-600 {
+  color: #881337 !important; /* Deep dark muted red */
+}
+
+[data-theme="ember"] .border-neutral-900,
+[data-theme="ember"] .border-neutral-900\/80,
+[data-theme="ember"] .border-neutral-800,
+[data-theme="ember"] .border-neutral-800\/80,
+[data-theme="ember"] .border-neutral-800\/60,
+[data-theme="ember"] .border-neutral-800\/40 {
+  border-color: rgba(153, 27, 27, 0.35) !important;
+}
+
+[data-theme="ember"] .text-amber-400,
+[data-theme="ember"] .text-amber-300 {
+  color: #ef4444 !important; /* Flame red */
+}
+
+[data-theme="ember"] .bg-amber-400,
+[data-theme="ember"] .bg-amber-500 {
+  background-color: #991b1b !important;
+  color: #fecaca !important;
+}
+
+[data-theme="ember"] .bg-amber-400:hover,
+[data-theme="ember"] .bg-amber-500:hover {
+  background-color: #b91c1c !important;
+}
+
+[data-theme="ember"] input,
+[data-theme="ember"] select,
+[data-theme="ember"] textarea {
+  background-color: #000000 !important;
+  color: #dc2626 !important;
+  border-color: rgba(185, 28, 28, 0.45) !important;
+}
+
+[data-theme="ember"] input::placeholder,
+[data-theme="ember"] textarea::placeholder {
+  color: #881337 !important;
+}
+
+/* 2. PARCHMENT PALETTE: Warm antique espresso & sepia stone */
+[data-theme="parchment"] {
+  background-color: #12100e !important;
+  color: #e7e2d9 !important;
+}
+
+[data-theme="parchment"] .bg-neutral-950,
+[data-theme="parchment"] .bg-neutral-900\/90,
+[data-theme="parchment"] .bg-neutral-900\/80,
+[data-theme="parchment"] .bg-neutral-900\/70,
+[data-theme="parchment"] .bg-neutral-900\/60,
+[data-theme="parchment"] .bg-neutral-900\/50,
+[data-theme="parchment"] .bg-neutral-900\/40,
+[data-theme="parchment"] .bg-neutral-900\/30,
+[data-theme="parchment"] .bg-neutral-900 {
+  background-color: #1c1916 !important;
+}
+
+[data-theme="parchment"] .border-neutral-900,
+[data-theme="parchment"] .border-neutral-900\/80,
+[data-theme="parchment"] .border-neutral-800,
+[data-theme="parchment"] .border-neutral-800\/80,
+[data-theme="parchment"] .border-neutral-800\/60,
+[data-theme="parchment"] .border-neutral-800\/40 {
+  border-color: rgba(120, 113, 108, 0.35) !important;
+}
+
+[data-theme="parchment"] .text-amber-400,
+[data-theme="parchment"] .text-amber-300 {
+  color: #e6b88a !important;
+}
+
+[data-theme="parchment"] .bg-amber-400,
+[data-theme="parchment"] .bg-amber-500 {
+  background-color: #c9935a !important;
+  color: #141210 !important;
+}
+
+/* 3. NORDIC PALETTE: Arctic midnight navy & glacier cyan */
+[data-theme="nordic"] {
+  background-color: #050914 !important;
+  color: #f1f5f9 !important;
+}
+
+[data-theme="nordic"] .bg-neutral-950,
+[data-theme="nordic"] .bg-neutral-900\/90,
+[data-theme="nordic"] .bg-neutral-900\/80,
+[data-theme="nordic"] .bg-neutral-900\/70,
+[data-theme="nordic"] .bg-neutral-900\/60,
+[data-theme="nordic"] .bg-neutral-900\/50,
+[data-theme="nordic"] .bg-neutral-900\/40,
+[data-theme="nordic"] .bg-neutral-900\/30,
+[data-theme="nordic"] .bg-neutral-900 {
+  background-color: #0b1329 !important;
+}
+
+[data-theme="nordic"] .border-neutral-900,
+[data-theme="nordic"] .border-neutral-900\/80,
+[data-theme="nordic"] .border-neutral-800,
+[data-theme="nordic"] .border-neutral-800\/80,
+[data-theme="nordic"] .border-neutral-800\/60,
+[data-theme="nordic"] .border-neutral-800\/40 {
+  border-color: rgba(56, 189, 248, 0.25) !important;
+}
+
+[data-theme="nordic"] .text-amber-400,
+[data-theme="nordic"] .text-amber-300 {
+  color: #38bdf8 !important;
+}
+
+[data-theme="nordic"] .bg-amber-400,
+[data-theme="nordic"] .bg-amber-500 {
+  background-color: #0284c7 !important;
+  color: #f0f9ff !important;
+}
+
+/* 4. EMERALD / AETHELGARD: Deep woodland pine & misty moss */
+[data-theme="emerald"] {
+  background-color: #04100b !important;
+  color: #ecfdf5 !important;
+}
+
+[data-theme="emerald"] .bg-neutral-950,
+[data-theme="emerald"] .bg-neutral-900\/90,
+[data-theme="emerald"] .bg-neutral-900\/80,
+[data-theme="emerald"] .bg-neutral-900\/70,
+[data-theme="emerald"] .bg-neutral-900\/60,
+[data-theme="emerald"] .bg-neutral-900\/50,
+[data-theme="emerald"] .bg-neutral-900\/40,
+[data-theme="emerald"] .bg-neutral-900\/30,
+[data-theme="emerald"] .bg-neutral-900 {
+  background-color: #081a13 !important;
+}
+
+[data-theme="emerald"] .border-neutral-900,
+[data-theme="emerald"] .border-neutral-900\/80,
+[data-theme="emerald"] .border-neutral-800,
+[data-theme="emerald"] .border-neutral-800\/80,
+[data-theme="emerald"] .border-neutral-800\/60,
+[data-theme="emerald"] .border-neutral-800\/40 {
+  border-color: rgba(16, 185, 129, 0.25) !important;
+}
+
+[data-theme="emerald"] .text-amber-400,
+[data-theme="emerald"] .text-amber-300 {
+  color: #34d399 !important;
+}
+
+[data-theme="emerald"] .bg-amber-400,
+[data-theme="emerald"] .bg-amber-500 {
+  background-color: #059669 !important;
+  color: #ecfdf5 !important;
+}
+
+/* 5. AMETHYST / CELESTIAL DUSK: Twilight plum & starlight violet */
+[data-theme="amethyst"] {
+  background-color: #0d0817 !important;
+  color: #faf5ff !important;
+}
+
+[data-theme="amethyst"] .bg-neutral-950,
+[data-theme="amethyst"] .bg-neutral-900\/90,
+[data-theme="amethyst"] .bg-neutral-900\/80,
+[data-theme="amethyst"] .bg-neutral-900\/70,
+[data-theme="amethyst"] .bg-neutral-900\/60,
+[data-theme="amethyst"] .bg-neutral-900\/50,
+[data-theme="amethyst"] .bg-neutral-900\/40,
+[data-theme="amethyst"] .bg-neutral-900\/30,
+[data-theme="amethyst"] .bg-neutral-900 {
+  background-color: #170f27 !important;
+}
+
+[data-theme="amethyst"] .border-neutral-900,
+[data-theme="amethyst"] .border-neutral-900\/80,
+[data-theme="amethyst"] .border-neutral-800,
+[data-theme="amethyst"] .border-neutral-800\/80,
+[data-theme="amethyst"] .border-neutral-800\/60,
+[data-theme="amethyst"] .border-neutral-800\/40 {
+  border-color: rgba(168, 85, 247, 0.25) !important;
+}
+
+[data-theme="amethyst"] .text-amber-400,
+[data-theme="amethyst"] .text-amber-300 {
+  color: #c084fc !important;
+}
+
+[data-theme="amethyst"] .bg-amber-400,
+[data-theme="amethyst"] .bg-amber-500 {
+  background-color: #7e22ce !important;
+  color: #faf5ff !important;
+}
+
+/* 6. SOLARIS / DUNE OCHRE: Terracotta bronze & solar brass */
+[data-theme="solaris"] {
+  background-color: #130c06 !important;
+  color: #fffbeb !important;
+}
+
+[data-theme="solaris"] .bg-neutral-950,
+[data-theme="solaris"] .bg-neutral-900\/90,
+[data-theme="solaris"] .bg-neutral-900\/80,
+[data-theme="solaris"] .bg-neutral-900\/70,
+[data-theme="solaris"] .bg-neutral-900\/60,
+[data-theme="solaris"] .bg-neutral-900\/50,
+[data-theme="solaris"] .bg-neutral-900\/40,
+[data-theme="solaris"] .bg-neutral-900\/30,
+[data-theme="solaris"] .bg-neutral-900 {
+  background-color: #20140b !important;
+}
+
+[data-theme="solaris"] .border-neutral-900,
+[data-theme="solaris"] .border-neutral-900\/80,
+[data-theme="solaris"] .border-neutral-800,
+[data-theme="solaris"] .border-neutral-800\/80,
+[data-theme="solaris"] .border-neutral-800\/60,
+[data-theme="solaris"] .border-neutral-800\/40 {
+  border-color: rgba(245, 158, 11, 0.25) !important;
+}
+
+[data-theme="solaris"] .text-amber-400,
+[data-theme="solaris"] .text-amber-300 {
+  color: #fbbf24 !important;
+}
+
+[data-theme="solaris"] .bg-amber-400,
+[data-theme="solaris"] .bg-amber-500 {
+  background-color: #d97706 !important;
+  color: #fffbeb !important;
+}
+
+/* 7. LIGHT MODE: Crisp linen daytime clarity */
+[data-theme="light"] {
+  background-color: #f7f6f2 !important;
+  color: #1c1917 !important;
+}
+
+[data-theme="light"] .bg-neutral-950 {
+  background-color: #ffffff !important;
+  color: #1c1917 !important;
+}
+
+[data-theme="light"] .bg-neutral-900\/90,
+[data-theme="light"] .bg-neutral-900\/80,
+[data-theme="light"] .bg-neutral-900\/70,
+[data-theme="light"] .bg-neutral-900\/60,
+[data-theme="light"] .bg-neutral-900\/50,
+[data-theme="light"] .bg-neutral-900\/40,
+[data-theme="light"] .bg-neutral-900\/30,
+[data-theme="light"] .bg-neutral-900 {
+  background-color: #f1ede4 !important;
+  color: #1c1917 !important;
+}
+
+[data-theme="light"] .text-neutral-100,
+[data-theme="light"] .text-neutral-200,
+[data-theme="light"] .text-white {
+  color: #18181b !important;
+}
+
+[data-theme="light"] .text-neutral-300,
+[data-theme="light"] .text-neutral-400 {
+  color: #44403c !important;
+}
+
+[data-theme="light"] .text-neutral-500,
+[data-theme="light"] .text-neutral-600 {
+  color: #78716c !important;
+}
+
+[data-theme="light"] .border-neutral-900,
+[data-theme="light"] .border-neutral-900\/80,
+[data-theme="light"] .border-neutral-800,
+[data-theme="light"] .border-neutral-800\/80,
+[data-theme="light"] .border-neutral-800\/60,
+[data-theme="light"] .border-neutral-800\/40 {
+  border-color: rgba(120, 113, 108, 0.22) !important;
+}
+
+[data-theme="light"] .text-amber-300,
+[data-theme="light"] .text-amber-400 {
+  color: #b45309 !important;
+}
+
+[data-theme="light"] .bg-amber-400,
+[data-theme="light"] .bg-amber-500 {
+  background-color: #d97706 !important;
+  color: #ffffff !important;
+}
+
+[data-theme="light"] input,
+[data-theme="light"] select,
+[data-theme="light"] textarea {
+  background-color: #ffffff !important;
+  color: #1c1917 !important;
+  border-color: rgba(120, 113, 108, 0.3) !important;
+}
+
+[data-theme="dark"] {
+  background-color: #09090b !important;
+  color: #fafafa !important;
+}
+
+
+
